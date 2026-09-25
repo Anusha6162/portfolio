@@ -1,50 +1,1301 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gandla Anusha</title>
-<style>
-body{margin:0;font-family:Arial;background:#0d1117;color:#fff;text-align:center}
-.header{padding:50px 20px;background:#161b22}
-.header h1{color:#58a6ff;font-size:32px}
-.card{background:#161b22;margin:15px;padding:15px;border-radius:10px;border:1px solid #30363d;text-align:left}
-.tag{background:#21262d;border:1px solid #30363d;padding:5px 10px;border-radius:15px;margin:3px;display:inline-block;font-size:12px}
-.btn{background:#238636;color:#fff;padding:10px 15px;border-radius:6px;text-decoration:none;display:inline-block;margin:5px;font-weight:bold}
-a{color:#58a6ff;text-decoration:none}
-</style>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Gandla Anusha | Portfolio</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #080d19;
+            color: #e5e7eb;
+            line-height: 1.6;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 18px 8%;
+
+            background: rgba(8, 13, 25, 0.96);
+
+            border-bottom: 1px solid #1e293b;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: #60a5fa;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        nav ul li a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #60a5fa;
+        }
+
+
+        /* HERO */
+
+        .hero {
+            min-height: 90vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            padding: 60px 20px;
+
+            background:
+                radial-gradient(
+                    circle at top,
+                    #172554 0%,
+                    #080d19 45%
+                );
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hello {
+            color: #60a5fa;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: 58px;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 span {
+            color: #60a5fa;
+        }
+
+        .hero h2 {
+            font-size: 25px;
+            color: #cbd5e1;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: auto;
+
+            color: #94a3b8;
+
+            font-size: 17px;
+        }
+
+        .hero-info {
+            margin-top: 18px;
+            color: #94a3b8;
+        }
+
+        .buttons {
+            margin-top: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+
+            padding: 12px 25px;
+
+            margin: 6px;
+
+            border-radius: 8px;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .primary {
+            background: #2563eb;
+            color: white;
+        }
+
+        .secondary {
+            border: 1px solid #3b82f6;
+            color: #60a5fa;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+
+
+        /* GENERAL */
+
+        section {
+            padding: 85px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+
+            font-size: 34px;
+
+            margin-bottom: 45px;
+
+            color: white;
+        }
+
+        .section-title span {
+            color: #60a5fa;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+
+        /* ABOUT */
+
+        .about {
+            max-width: 850px;
+
+            margin: auto;
+
+            text-align: center;
+
+            color: #94a3b8;
+
+            font-size: 17px;
+        }
+
+
+        /* EDUCATION */
+
+        .education-card {
+            max-width: 850px;
+
+            margin: auto;
+
+            background: #111827;
+
+            border: 1px solid #1e293b;
+
+            border-radius: 15px;
+
+            padding: 30px;
+
+            transition: 0.3s;
+        }
+
+        .education-card:hover {
+            border-color: #3b82f6;
+
+            transform: translateY(-5px);
+        }
+
+        .education-card h3 {
+            color: #60a5fa;
+
+            font-size: 23px;
+        }
+
+        .education-card h4 {
+            color: #e2e8f0;
+
+            margin-top: 5px;
+        }
+
+        .education-card p {
+            color: #94a3b8;
+
+            margin-top: 7px;
+        }
+
+        .marks {
+            margin-top: 15px;
+
+            display: inline-block;
+
+            padding: 7px 14px;
+
+            border-radius: 20px;
+
+            background: #1e293b;
+
+            color: #bfdbfe;
+        }
+
+
+        /* SKILLS */
+
+        .skills-grid {
+            max-width: 900px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(140px, 1fr));
+
+            gap: 15px;
+        }
+
+        .skill {
+            background: #111827;
+
+            border: 1px solid #1e293b;
+
+            padding: 20px;
+
+            text-align: center;
+
+            border-radius: 10px;
+
+            color: #dbeafe;
+
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            border-color: #3b82f6;
+
+            transform: translateY(-4px);
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+
+            nav {
+                padding: 16px 20px;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .hero {
+                min-height: 85vh;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero h2 {
+                font-size: 20px;
+            }
+
+            section {
+                padding: 65px 20px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+        }
+      /* ================= INTERNSHIPS ================= */
+
+.internship-grid {
+    max-width: 950px;
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(250px, 1fr));
+
+    gap: 20px;
+}
+
+.internship-card {
+    background: #111827;
+
+    border: 1px solid #1e293b;
+
+    border-radius: 14px;
+
+    padding: 25px;
+
+    transition: 0.3s;
+}
+
+.internship-card:hover {
+    border-color: #3b82f6;
+
+    transform: translateY(-5px);
+}
+
+.internship-card h3 {
+    color: #60a5fa;
+
+    margin-bottom: 10px;
+
+    font-size: 20px;
+}
+
+.internship-card p {
+    color: #94a3b8;
+}
+
+.internship-card .organization {
+    color: #cbd5e1;
+
+    font-size: 14px;
+
+    margin-bottom: 10px;
+}
+
+
+/* ================= PROJECTS ================= */
+
+.project-grid {
+    max-width: 950px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(280px, 1fr));
+
+    gap: 25px;
+}
+
+.project-card {
+    background: #111827;
+
+    border: 1px solid #1e293b;
+
+    border-radius: 15px;
+
+    padding: 28px;
+
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    border-color: #3b82f6;
+
+    transform: translateY(-5px);
+}
+
+.project-card h3 {
+    color: #60a5fa;
+
+    font-size: 22px;
+
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    color: #94a3b8;
+
+    margin-bottom: 15px;
+}
+
+
+/* ================= TECHNOLOGY TAGS ================= */
+
+.tech {
+    display: inline-block;
+
+    padding: 5px 10px;
+
+    margin: 3px;
+
+    background: #1e293b;
+
+    border-radius: 20px;
+
+    color: #bfdbfe;
+
+    font-size: 12px;
+}
+
+
+/* ================= JAVA PRACTICE ================= */
+
+.java-grid {
+    max-width: 900px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(180px, 1fr));
+
+    gap: 12px;
+}
+
+.java-item {
+    padding: 15px;
+
+    text-align: center;
+
+    background: #111827;
+
+    border: 1px solid #1e293b;
+
+    border-radius: 9px;
+
+    color: #cbd5e1;
+
+    transition: 0.3s;
+}
+
+.java-item:hover {
+    border-color: #3b82f6;
+
+    transform: translateY(-3px);
+}
+
+
+/* ================= ACHIEVEMENTS ================= */
+
+.achievement-grid {
+    max-width: 850px;
+
+    margin: auto;
+
+    display: grid;
+
+    gap: 15px;
+}
+
+.achievement {
+    background: #111827;
+
+    border-left: 4px solid #3b82f6;
+
+    padding: 20px;
+
+    border-radius: 8px;
+
+    color: #cbd5e1;
+
+    transition: 0.3s;
+}
+
+.achievement:hover {
+    transform: translateX(5px);
+}
+
+
+/* ================= CERTIFICATIONS ================= */
+
+.cert-grid {
+    max-width: 900px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(250px, 1fr));
+
+    gap: 18px;
+}
+
+.cert-card {
+    background: #111827;
+
+    border: 1px solid #1e293b;
+
+    border-radius: 12px;
+
+    padding: 22px;
+
+    text-align: center;
+
+    transition: 0.3s;
+}
+
+.cert-card:hover {
+    border-color: #3b82f6;
+
+    transform: translateY(-4px);
+}
+
+.cert-card h3 {
+    color: #60a5fa;
+
+    margin-bottom: 8px;
+}
+
+.cert-card p {
+    color: #94a3b8;
+}
+
+
+/* ================= LANGUAGES ================= */
+
+.languages {
+    max-width: 700px;
+
+    margin: auto;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 12px;
+}
+
+.language {
+    padding: 10px 18px;
+
+    background: #111827;
+
+    border: 1px solid #1e293b;
+
+    border-radius: 25px;
+
+    color: #cbd5e1;
+
+    transition: 0.3s;
+}
+
+.language:hover {
+    border-color: #3b82f6;
+
+    transform: translateY(-3px);
+}
+
+
+/* ================= CONTACT ================= */
+
+.contact {
+    text-align: center;
+}
+
+.contact p {
+    color: #94a3b8;
+
+    margin: 10px;
+}
+
+.contact a {
+    color: #60a5fa;
+
+    text-decoration: none;
+}
+
+.contact a:hover {
+    text-decoration: underline;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    text-align: center;
+
+    padding: 25px;
+
+    border-top: 1px solid #1e293b;
+
+    color: #64748b;
+
+    font-size: 14px;
+  }
+
+    </style>
+
 </head>
+
+
 <body>
-<div class="header">
-<h1>GANDLA ANUSHA</h1>
-<p>Java | Spring Boot | React | MySQL</p>
-<p>B.Tech CSE - 75% | 200+ LeetCode</p>
-<a class="btn" href="https://github.com/Anusha6162">GitHub</a>
-<a class="btn" style="background:#1f6feb" href="https://www.linkedin.com/in/gandla-anusha-26b459374">LinkedIn</a>
-</div>
-<div class="card">
-<h3 style="color:#58a6ff">🚀 Project</h3>
-<b>Inventory Management System</b><br>
-Java, Spring Boot, MySQL, React - CRUD & REST APIs
-</div>
-<div class="card">
-<h3 style="color:#58a6ff">☕ My 9 Java Files</h3>
-<span class="tag">ATM.java</span>
-<span class="tag">Calculator.java</span>
-<span class="tag">Number-Guessing-Game</span>
-<span class="tag">To do list . java</span>
-<span class="tag">TwoSum.java</span>
-<span class="tag">BestTimetobuy stock.java</span>
-<span class="tag">Binary search.java</span>
-<span class="tag">Maxsubarray.java</span>
-<span class="tag">contains duplicate.java</span>
-</div>
-<div class="card">
-<h3 style="color:#58a6ff">🛠️ Skills</h3>
-Java, Python, Spring Boot, React, MySQL, Git, Postman<br>
-4 AICTE Internships | Mother Theresa Institute
-</div>
-<div class="card" style="text-align:center">
-ganusharms12345@gmail.com | 63019 06162<br>Ramasamudram, AP
-</div>
+
+
+<!-- NAVBAR -->
+
+<nav>
+
+    <div class="logo">
+        Anusha.
+    </div>
+
+    <ul>
+
+        <li>
+            <a href="#home">Home</a>
+        </li>
+
+        <li>
+            <a href="#about">About</a>
+        </li>
+
+        <li>
+            <a href="#education">Education</a>
+        </li>
+
+        <li>
+            <a href="#skills">Skills</a>
+        </li>
+
+        <li>
+            <a href="#internships">Internships</a>
+        </li>
+
+        <li>
+            <a href="#projects">Projects</a>
+        </li>
+
+        <li>
+            <a href="#contact">Contact</a>
+        </li>
+
+    </ul>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="hello">
+            👋 Hello, I'm
+        </div>
+
+        <h1>
+            Gandla <span>Anusha</span>
+        </h1>
+
+        <h2>
+            Java Developer | Full Stack Developer
+        </h2>
+
+        <p>
+            B.Tech Computer Science and Engineering student
+            interested in Java development, backend development
+            and full-stack application development.
+        </p>
+
+        <div class="hero-info">
+            B.Tech CSE • 75% • 200+ LeetCode Problems
+        </div>
+
+        <div class="buttons">
+
+            <a
+                href="https://github.com/Anusha6162"
+                target="_blank"
+                class="btn primary">
+
+                GitHub
+
+            </a>
+
+            <a
+                href="https://www.linkedin.com/in/gandla-anusha-26b459374/"
+                target="_blank"
+                class="btn secondary">
+
+                LinkedIn
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <h2 class="section-title">
+        About <span>Me</span>
+    </h2>
+
+    <div class="about">
+
+        <p>
+            I am a B.Tech Computer Science and Engineering student
+            with an interest in software development and problem solving.
+        </p>
+
+        <br>
+
+        <p>
+            I have worked with Java, Spring Boot, React, MySQL and Python.
+            I enjoy developing practical applications and strengthening
+            my programming and problem-solving skills.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- EDUCATION -->
+
+<section id="education">
+
+    <h2 class="section-title">
+        <span>Education</span>
+    </h2>
+
+    <div class="education-card">
+
+        <h3>
+            B.Tech — Computer Science and Engineering
+        </h3>
+
+        <h4>
+            Mother Theresa Institute of Engineering and Technology
+        </h4>
+
+        <p>
+            JNTUA University
+        </p>
+
+        <p>
+            Ramasamudram, Andhra Pradesh
+        </p>
+
+        <span class="marks">
+            75%
+        </span>
+
+    </div>
+
+
+    <br><br>
+
+
+    <div class="education-card">
+
+        <h3>
+            Intermediate — MPC
+        </h3>
+
+        <h4>
+            AP Model College
+        </h4>
+
+        <p>
+            Ramasamudram, Andhra Pradesh
+        </p>
+
+        <span class="marks">
+            86%
+        </span>
+
+    </div>
+
+
+    <br><br>
+
+
+    <div class="education-card">
+
+        <h3>
+            SSC
+        </h3>
+
+        <h4>
+            AP Model School
+        </h4>
+
+        <p>
+            Ramasamudram, Andhra Pradesh
+        </p>
+
+        <span class="marks">
+            9.5 GPA
+        </span>
+
+    </div>
+
+</section>
+
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+    <h2 class="section-title">
+        Technical <span>Skills</span>
+    </h2>
+
+    <div class="skills-grid">
+
+        <div class="skill">☕ Java</div>
+
+        <div class="skill">🐍 Python</div>
+
+        <div class="skill">🌱 Spring Boot</div>
+
+        <div class="skill">⚛️ React</div>
+
+        <div class="skill">🗄️ MySQL</div>
+
+        <div class="skill">🔧 Git</div>
+
+        <div class="skill">🐙 GitHub</div>
+
+        <div class="skill">🚀 Postman</div>
+
+    </div>
+
+</section>
+<!-- ================= INTERNSHIPS ================= -->
+
+<section id="internships">
+
+    <h2 class="section-title">
+        My <span>Internships</span>
+    </h2>
+
+    <div class="internship-grid">
+
+        <div class="internship-card">
+
+            <h3>Java Full Stack Development</h3>
+
+            <p class="organization">
+                AICTE Approved Virtual Internship
+            </p>
+
+            <p>
+                Virtual internship focused on Java full-stack
+                development concepts and application development.
+            </p>
+
+        </div>
+
+
+        <div class="internship-card">
+
+            <h3>Artificial Intelligence & Machine Learning</h3>
+
+            <p class="organization">
+                AICTE Approved Virtual Internship
+            </p>
+
+            <p>
+                Virtual internship covering fundamental concepts
+                related to Artificial Intelligence and Machine Learning.
+            </p>
+
+        </div>
+
+
+        <div class="internship-card">
+
+            <h3>Networking & Cloud</h3>
+
+            <p class="organization">
+                AICTE Approved Virtual Internship
+            </p>
+
+            <p>
+                Virtual internship focused on networking and
+                cloud technology concepts.
+            </p>
+
+        </div>
+
+
+        <div class="internship-card">
+
+            <h3>Mobile App Development</h3>
+
+            <p class="organization">
+                EduSkills • AICTE Approved
+            </p>
+
+            <p>
+                Virtual internship focused on mobile application
+                development concepts and technologies.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= PROJECTS ================= -->
+
+<section id="projects">
+
+    <h2 class="section-title">
+        Featured <span>Projects</span>
+    </h2>
+
+    <div class="project-grid">
+
+
+        <!-- INVENTORY PROJECT -->
+
+        <div class="project-card">
+
+            <h3>
+                Inventory Management System
+            </h3>
+
+            <p>
+                A full-stack inventory management application
+                for managing products through CRUD operations
+                and REST APIs.
+            </p>
+
+            <span class="tech">Java</span>
+
+            <span class="tech">Spring Boot</span>
+
+            <span class="tech">React</span>
+
+            <span class="tech">MySQL</span>
+
+            <span class="tech">REST API</span>
+
+            <br><br>
+
+            <a
+                href="https://github.com/Anusha6162"
+                target="_blank"
+                class="btn primary">
+
+                View on GitHub
+
+            </a>
+
+        </div>
+
+
+        <!-- STUDENT MANAGEMENT -->
+
+        <div class="project-card">
+
+            <h3>
+                Student Management System
+            </h3>
+
+            <p>
+                Java-based application for managing student
+                records with operations such as adding,
+                viewing, searching and deleting records.
+            </p>
+
+            <span class="tech">Java</span>
+
+            <span class="tech">OOP</span>
+
+            <span class="tech">Collections</span>
+
+        </div>
+
+
+        <!-- NUMBER GUESSING -->
+
+        <div class="project-card">
+
+            <h3>
+                Number Guessing Game
+            </h3>
+
+            <p>
+                Java console application based on number
+                generation, user input and conditional logic.
+            </p>
+
+            <span class="tech">Java</span>
+
+            <span class="tech">Loops</span>
+
+            <span class="tech">Conditions</span>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= JAVA PRACTICE ================= -->
+
+<section>
+
+    <h2 class="section-title">
+        Java <span>Practice</span>
+    </h2>
+
+    <div class="java-grid">
+
+        <div class="java-item">
+            Reverse a Number
+        </div>
+
+        <div class="java-item">
+            Palindrome
+        </div>
+
+        <div class="java-item">
+            Prime Number
+        </div>
+
+        <div class="java-item">
+            Fibonacci Series
+        </div>
+
+        <div class="java-item">
+            Factorial
+        </div>
+
+        <div class="java-item">
+            Two Sum
+        </div>
+
+        <div class="java-item">
+            Binary Search
+        </div>
+
+        <div class="java-item">
+            Max Subarray
+        </div>
+
+        <div class="java-item">
+            Contains Duplicate
+        </div>
+
+    </div>
+
+</section>
+<!-- ================= ACHIEVEMENTS ================= -->
+
+<section id="achievements">
+
+    <h2 class="section-title">
+        My <span>Achievements</span>
+    </h2>
+
+    <div class="achievement-grid">
+
+        <div class="achievement">
+            🏆 Solved 200+ programming problems on LeetCode
+        </div>
+
+        <div class="achievement">
+            💻 Completed AICTE-approved virtual internships
+        </div>
+
+        <div class="achievement">
+            🚀 Developed a full-stack Inventory Management System
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= CERTIFICATIONS ================= -->
+
+<section id="certifications">
+
+    <h2 class="section-title">
+        <span>Certifications</span>
+    </h2>
+
+    <div class="cert-grid">
+
+
+        <div class="cert-card">
+
+            <h3>
+                Mobile App Development
+            </h3>
+
+            <p>
+                EduSkills / AICTE Approved Internship
+            </p>
+
+        </div>
+
+
+        <div class="cert-card">
+
+            <h3>
+                Exploratory Data Analytics
+            </h3>
+
+            <p>
+                NASSCOM
+            </p>
+
+        </div>
+
+
+        <div class="cert-card">
+
+            <h3>
+                AICTE Virtual Internships
+            </h3>
+
+            <p>
+                Java Full Stack • AI & ML • Networking & Cloud
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= LANGUAGES ================= -->
+
+<section id="languages">
+
+    <h2 class="section-title">
+        Languages <span>Known</span>
+    </h2>
+
+    <div class="languages">
+
+        <div class="language">
+            Telugu
+        </div>
+
+        <div class="language">
+            English
+        </div>
+
+        <div class="language">
+            Hindi
+        </div>
+
+        <div class="language">
+            Kannada
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact">
+
+    <h2 class="section-title">
+        Get In <span>Touch</span>
+    </h2>
+
+    <div class="contact">
+
+        <p>
+            📧
+            <a href="mailto:ganusharms12345@gmail.com">
+                ganusharms12345@gmail.com
+            </a>
+        </p>
+
+        <p>
+            📱 63019 06162
+        </p>
+
+        <p>
+            📍 Ramasamudram, Andhra Pradesh
+        </p>
+
+
+        <div class="buttons">
+
+            <a
+                href="https://github.com/Anusha6162"
+                target="_blank"
+                class="btn primary">
+
+                GitHub
+
+            </a>
+
+
+            <a
+                href="https://www.linkedin.com/in/gandla-anusha-26b459374/"
+                target="_blank"
+                class="btn secondary">
+
+                LinkedIn
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    © 2026 Gandla Anusha • Java & Full Stack Developer
+
+</footer>
+
+
 </body>
+
 </html>
